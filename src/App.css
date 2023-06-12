@@ -1,38 +1,85 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
+  padding-bottom: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1200px) {
+  .items {
+    grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 900px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@media screen and (max-width: 600px) {
+  .items {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* .item_container {
+  position: relative;
+  display: inline-block;
+} */
+
+.item_image {
+  width: 200px;
+  height: 200px;
+}
+
+.item_overlay {
+  position: absolute;
+  background-color: rgba(67, 67, 67, 0.575);
+  width: 200px;
+  height: 50px;
+  top: 150px;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: calc(3px + 2vmin);
+  display: flex;
+  align-items: center;
+}
+.item_title {
+  padding-left: 3%;
+}
+
+.item_price {
+  padding-right: 3%;
+}
+.item_content {
+  position: relative;
+}
+.search_container {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.search_input {
+  width: 40vw;
+  text-align: center;
+  outline: none;
+  height: 5vh;
+  border-radius: 20em;
+  background-color: #1f1f1f;
+  caret-color: green;
+  border: none;
+}
+.search_input:focus {
+  border: 1px solid green;
 }
